@@ -33,24 +33,17 @@ int main(int argc, char* argv[])
   }
 
   // First Come First Serve
-  printf("\n\nFCFS ordine di esecuzione: ");
-  printf("\nTempo medio di attesa: %f \n", printBurst(v,n));
+  printf("\n\nFCFS ordine di esecuzione: \nTempo medio di attesa: %f \n", printBurst(v,n));
 
   // Shortest Job First
-
   //sort(v, n, compareBurst); // OLD BUBBLE
-
   qsort(v, n, sizeof(proc_t), compareBurst);
-  printf("SJF ordine di esecuzione: ");
-  printf("\nTempo medio di attesa: %f \n", printBurst(v,n));
+  printf("SJF ordine di esecuzione: \nTempo medio di attesa: %f \n", printBurst(v,n));
 
   // Priority
-
   //sort(v, n, comparePriority); // OLD BUBBLE
-
   qsort(v, n, sizeof(proc_t), comparePriority);
-  printf("Priority ordine di esecuzione: ");
-  printf("\nTempo medio di attesa: %f \n", printBurst(v,n));
+  printf("Priority ordine di esecuzione: \nTempo medio di attesa: %f \n", printBurst(v,n));
 
   // Round Robin
   printf("Round Robin ordine di esecuzione: ");
