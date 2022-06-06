@@ -60,10 +60,11 @@ int main(int argc, char* argv[])
       printf("%s[%ld] ", popped->nome, popped->burst_cpu);
       tempo += ((popped->burst_cpu > quanto) ? quanto : popped->burst_cpu);
       popped->burst_cpu -= quanto;
-      pushQueue(queue,popped);
       if (popped->burst_cpu <= 0){
         wait += tempo - popped->perm_burst;
         free(popped);
+      }else{
+        pushQueue(queue,popped);
       }
     }
 }
