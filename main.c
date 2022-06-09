@@ -27,11 +27,13 @@ int main(int argc, char* argv[])
     proc->burst_cpu = v[i].burst_cpu;
     proc->perm_burst = proc->burst_cpu;
     proc->priority = v[i].priority;
-    memcpy(proc->nome,v[i].nome,sizeof(proc->nome));
+    memcpy(proc->nome,v[i].nome,strlen(v[i].nome));
     pushQueue(queue,proc);
     printf("%s %ld %ld\n", v[i].nome, v[i].burst_cpu, v[i].priority);
   }
-
+  
+  fclose(fd);
+  
   // First Come First Serve
   printf("\n\nFCFS ordine di esecuzione: \nTempo medio di attesa: %f \n", printBurst(v,n));
 
