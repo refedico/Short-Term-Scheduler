@@ -16,7 +16,7 @@ NameN Burst Priority
 
 Example:
 ```
-#3 10
+# 3 10
 P1 16 3
 P2 8 1
 P3 10 2
